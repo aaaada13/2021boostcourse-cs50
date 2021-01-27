@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <cs50.h>
+ 
+int main (void)
+{
+    printf("[학점 계산 프로그램]\n학점 계산 프로그램입니다.\n");
+    sleep(1);
+    printf("종료를 원하시면 '999'를 입력해주세요.\n");
+    sleep(1);
+    printf("[학점 테이블]\n학점: A+  A   B+  B   C+  C   D+  D   F\n점수: 95  90  85  80  75  70  65  60  0\n");
+ 
+    
+    while (1)
+    {
+        float score= get_float("점수를 입력하세요.\n");
+ 
+        if (95<=score && score<=100){
+            printf("학점은 A+ 입니다.");
+        }
+        
+        else if (90<=score && score<95){
+            printf("학점은 A 입니다.\n");
+        }
+        else if (85<=score && score<90){
+            printf("학점은 B+ 입니다.\n");
+        }
+        else if (80<=score && score<85){
+            printf("학점은 B 입니다.\n");
+        }
+        else if (75<=score && score<80){
+            printf("학점은 c+ 입니다.\n");
+        }
+        else if (70<=score && score<75){
+            printf("학점은 C 입니다.\n");
+        }
+        else if (65<=score && score<70){
+            printf("학점은 D+입니다.\n");
+        }
+        else if (60<=score && score<65){
+            printf("학점은 D 입니다.\n");
+        }
+        else if (0<=score && score<60){
+            printf("학점은 F 입니다.\n");
+        }
+        else if (score==999){
+            printf("프로그램이 종료됩니다.\n");
+            sleep(1);
+            break;
+        }
+        else {
+            printf("0~100 범위 내의 정확한 값을 입력하세요.\n");
+ 
+        }
+    }
+}
